@@ -129,6 +129,7 @@ class CalculatorViewModel {
 
     func invertOperatorsAndAddMinus(in input: String) -> String {
         var result = ""
+        let operators:[Character] = ["/", "*", "-"]
         var previousChar: Character? = nil
         var isNegativeNumber = false // Флаг для отслеживания отрицательных чисел
 
@@ -139,10 +140,12 @@ class CalculatorViewModel {
                 result.append("-")
                 isNegativeNumber = false
             case "-":
-                // Заменяем минус на плюс
-                if (index != 0) {
-                    result.append("+")
+                if let previousChar = previousChar {
+                    if (!operators.contains(previousChar)) {
+                        result.append("+")
+                    }
                 }
+                
                 isNegativeNumber = false
             case "*", "/", "%":  // Другие операторы остаются без изменений
                 result.append(char)
