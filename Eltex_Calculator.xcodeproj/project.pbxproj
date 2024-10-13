@@ -14,6 +14,7 @@
 		B30C03CA2CB6CBAE00C3BEF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B30C03C92CB6CBAE00C3BEF2 /* Assets.xcassets */; };
 		B30C03CD2CB6CBAE00C3BEF2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B30C03CC2CB6CBAE00C3BEF2 /* Base */; };
 		B3C4BF532CBBC47B000A3970 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C4BF522CBBC47B000A3970 /* CalculatorViewModel.swift */; };
+		B3C4BF552CBBE042000A3970 /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C4BF542CBBE042000A3970 /* InputError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B30C03CC2CB6CBAE00C3BEF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B30C03CE2CB6CBAE00C3BEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3C4BF522CBBC47B000A3970 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		B3C4BF542CBBE042000A3970 /* InputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +44,6 @@
 		B30C03B42CB6CBAD00C3BEF2 = {
 			isa = PBXGroup;
 			children = (
-				B3C4BF522CBBC47B000A3970 /* CalculatorViewModel.swift */,
 				B30C03BF2CB6CBAD00C3BEF2 /* Eltex_Calculator */,
 				B30C03BE2CB6CBAD00C3BEF2 /* Products */,
 			);
@@ -59,6 +60,7 @@
 		B30C03BF2CB6CBAD00C3BEF2 /* Eltex_Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				B3C4BF522CBBC47B000A3970 /* CalculatorViewModel.swift */,
 				B30C03C02CB6CBAD00C3BEF2 /* AppDelegate.swift */,
 				B30C03C22CB6CBAD00C3BEF2 /* SceneDelegate.swift */,
 				B30C03C42CB6CBAD00C3BEF2 /* ViewController.swift */,
@@ -66,6 +68,7 @@
 				B30C03C92CB6CBAE00C3BEF2 /* Assets.xcassets */,
 				B30C03CB2CB6CBAE00C3BEF2 /* LaunchScreen.storyboard */,
 				B30C03CE2CB6CBAE00C3BEF2 /* Info.plist */,
+				B3C4BF542CBBE042000A3970 /* InputError.swift */,
 			);
 			path = Eltex_Calculator;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				B30C03C52CB6CBAD00C3BEF2 /* ViewController.swift in Sources */,
 				B30C03C12CB6CBAD00C3BEF2 /* AppDelegate.swift in Sources */,
 				B30C03C32CB6CBAD00C3BEF2 /* SceneDelegate.swift in Sources */,
+				B3C4BF552CBBE042000A3970 /* InputError.swift in Sources */,
 				B3C4BF532CBBC47B000A3970 /* CalculatorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

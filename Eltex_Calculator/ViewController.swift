@@ -28,18 +28,20 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func plusMinusTap(_ sender: Any) {
+        viewModel.applyPlusMinus()
+    }
     @IBAction func percentTap(_ sender: Any) {
         if !viewModel.isLastCharOperator() {
-            viewModel.pushForwardInput(value: "(")
-            viewModel.pushBackToInput(value: ")")
-            viewModel.pushBackToInput(value: "*0.01")
-            
+            viewModel.applyPercent()
         }
-        viewModel.calculateResult()
     }
     
     @IBAction func divideTap(_ sender: Any) {
         if !viewModel.isLastCharOperator() && !viewModel.input.isEmpty {
+            if (viewModel.isLastDouble) {
+                viewModel.isLastDouble = false
+            }
             viewModel.pushBackToInput(value: "/")
         }
         
@@ -56,7 +58,10 @@ class ViewController: UIViewController {
         viewModel.pushBackToInput(value: "9")
     }
     @IBAction func multiplyTap(_ sender: Any) {
-        if !viewModel.isLastCharOperator() && viewModel.input.count != 0{
+        if !viewModel.isLastCharOperator() && viewModel.input.count != 0 {
+            if (viewModel.isLastDouble) {
+                viewModel.isLastDouble = false
+            }
             viewModel.pushBackToInput(value: "*")
         }
         
@@ -84,6 +89,9 @@ class ViewController: UIViewController {
     }
     @IBAction func plusTap(_ sender: Any) {
         if !viewModel.isLastCharOperator() {
+            if (viewModel.isLastDouble) {
+                viewModel.isLastDouble = false
+            }
             viewModel.pushBackToInput(value: "+")
         }
     }
@@ -91,8 +99,13 @@ class ViewController: UIViewController {
         viewModel.pushBackToInput(value: "0")
     }
     @IBAction func comaTap(_ sender: Any) {
-        if let lastChar = viewModel.input.last, lastChar != "." {
+        if let lastChar = viewModel.input.last, lastChar != ".", !viewModel.isLastDouble {
             viewModel.pushBackToInput(value: ".")
+            viewModel.isLastDouble = true
+        }
+        if (viewModel.input.isEmpty) {
+            viewModel.pushBackToInput(value: ".")
+            viewModel.isLastDouble = true
         }
         
     }
